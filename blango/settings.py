@@ -53,6 +53,7 @@ class Dev(Configuration):
       "crispy_forms",
       "crispy_bootstrap5",
       'debug_toolbar',
+      'blango_auth',
   ]
 
   MIDDLEWARE = [
@@ -181,7 +182,10 @@ class Dev(Configuration):
 
   CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
   CRISPY_TEMPLATE_PACK = "bootstrap5"
+  
+  AUTH_USER_MODEL = "blango_auth.User"
 
+  
 class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
